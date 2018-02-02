@@ -1,10 +1,36 @@
 .Box {
   display: flex;
   flex-direction: column;
-  /* background-color: aliceblue; */
-  width: 100%;
   text-align: left;
   font-family: Georgia;
+  /* background-color: aliceblue; */
+}
+
+.Article{
+  display: flex;
+  flex-direction: row;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 1%;
+  border-bottom: 0.094em solid #f1f1f1;
+}
+
+.DateBox {
+  display: flex;
+  font-family: Arial;
+  font-size: 0.75em;
+  font-weight: 500;
+  width: 20%;
+  color: #a2a0a5;
+  padding-top: 1%;
+  /* background: mediumaquamarine; */
+}
+
+.MiddleBox{
+  width: 80%;
+  margin-right: 0;
 }
 
 .ArtTitle {
@@ -21,7 +47,7 @@
 }
 
 .ArtBody {
-    line-height: 1.5em;
+  line-height: 1.5em;
 }
 
 p {
@@ -41,4 +67,15 @@ p {
   margin-left:0.2em;
   text-transform: uppercase;
   padding-right:0% !important;
+}
+
+.ImgContainer {
+  margin-left: 0;
+  width: 35%;
+  text-align: right;
+}
+
+.ImgContainer img {
+  max-width: 240px;
+  height: auto;
 }
