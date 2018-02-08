@@ -1,0 +1,16 @@
+button {
+  text-align: center;
+  height: 62px;
+  width: 200px;
+  border-color: #4a9191;
+  color:#4a9191;
+  text-decoration: none;
+  margin-left: 20px;
+  outline: none;
+  font-size: 17px;
+}
+
+button:active {
+  background-color: #01adad;
+  color: white;
+}

@@ -5,7 +5,6 @@ class Box extends Component {
   render() {
     return (
       <div className="Box">
-          <p>By</p><p className = "AuthorName">{this.props.boxAuthor}</p>
       <div className = "Article">
         <div className ="DateBox">
           <p>{this.props.datetext}</p>
