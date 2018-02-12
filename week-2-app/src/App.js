@@ -9,44 +9,49 @@ import PlacehImg3 from './assets/3.png';
 
 class App extends Component {
   render() {
+      const data = [
+        {
+          id: 1,
+          date: "Jan. 30, 2018",
+          title: "Kodak's Dubious Blockchain Gamble",
+          body: "What's a 130-year-old photo company doing dabbling in cryptocurrency? Either revolutionising digital rights management or trying to make a quick buck.",
+          author: "Kevin Roose",
+          image: {PlacehImg1}
+        },
+        {
+          id: 2,
+          date: "Jan. 30, 2018",
+          title: "Taiwan Retaliates Against Chinese Airlines, Hampering Lunar New Year Travel",
+          body: "Taiwan, pushing back over encroachment on Taiwan Strait airspace, may leave thousands without flights home for the holiday.",
+          author: "Chris Horton",
+          image: {PlacehImg2}
+        },
+        {
+          id: 3,
+          date: "Jan. 30, 2018",
+          title:"New Jersey Embraces an Idea it Once Rejected: Make Utilities Pay to Emit Carbon",
+          body:"Democratic governors nationwide are taking steps to tax or price emissions within their own borders, even as Trump dismantles federal climate policy.",
+          author: "Brad Plumer",
+          image: {PlacehImg3}
+        }
+      ];
 
-      const dateFill = "Jan. 30, 2018";
+      const boxData = data.map((item, i) => {
+        return  <Box
+              key = {i}
+              datetext = {item.date}
+              boxTitle = {item.title}
+              boxText = {item.body}
+              boxAuthor = {item.author}
+              imgFill = {item.image}
+              />
+      });
 
-      const titleText1 = "Kodak's Dubious Blockchain Gamble";
-      const bodyText1 = "What's a 130-year-old photo company doing dabbling in cryptocurrency? Either revolutionising digital rights management or trying to make a quick buck.";
-      const authorText1 = "Kevin Roose"
-
-      const titleText2 = "Taiwan Retaliates Against Chinese Airlines, Hampering Lunar New Year Travel";
-      const bodyText2 = "Taiwan, pushing back over encroachment on Taiwan Strait airspace, may leave thousands without flights home for the holiday.";
-      const authorText2 = "Chris Horton"
-
-      const titleText3 = "New Jersey Embraces an Idea it Once Rejected: Make Utilities Pay to Emit Carbon";
-      const bodyText3 = "Democratic governors nationwide are taking steps to tax or price emissions within their own borders, even as Trump dismantles federal climate policy.";
-      const authorText3 = "Brad Plumer"
 
       return (
         <div className = "App" >
           <div className = "Row">
-          <Box
-          datetext = {dateFill}
-          boxTitle = {titleText1}
-          boxText = {bodyText1}
-          boxAuthor = {authorText1}
-          imgFill = {PlacehImg1}/>
-
-          <Box
-          datetext = {dateFill}
-          boxTitle = {titleText2}
-          boxText = {bodyText2}
-          boxAuthor = {authorText2}
-          imgFill = {PlacehImg2}/>
-
-          <Box
-          datetext = {dateFill}
-          boxTitle = {titleText3}
-          boxText = {bodyText3}
-          boxAuthor = {authorText3}
-          imgFill = {PlacehImg3}/>
+            {boxData}
           </div>
         </div>
       );
