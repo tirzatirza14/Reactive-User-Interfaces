@@ -19,26 +19,27 @@ class App extends Component {
   }
 
   render() {
+
+    const names = [
+      'First Button',
+      'Second Button',
+      'Third Button'
+    ];
+
+    const labels = names.map((item, i) => {
+      return <Button
+      label = {item}
+      onClick = {this.clicked}
+      key = {i}
+      />
+    });
+
     return (
       <div className="App">
-      <div className = "Button">
-        <Button
+        <div className = "Button">
+          {labels}
+        </div>
 
-        label = "First Button"
-        onClick = {this.clicked}
-        />
-        <Button
-
-        onClick = {this.clicked}
-        label = "Second Button"
-        />
-        <Button
-
-        onClick = {this.clicked}
-        label = "Third Button"
-
-        />
-          </div>
         <Display
         className = "Display"
         showLabel = {this.state.labelDisplay}/>
