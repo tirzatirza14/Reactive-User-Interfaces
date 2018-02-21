@@ -1,0 +1,22 @@
+.Output {
+  color: white;
+  padding: 3em;
+  padding-top: 0;
+  padding-bottom: 2em;
+  background-color: black;
+}
+
+.Output span {
+  font-size: 1em;
+}
+
+.Output h1 {
+  font-family: Helvetica, sans-serif;
+  font-size: 4em;
+  text-transform: uppercase;
+  margin-bottom: 40%;
+}
+
+.Output p {
+  font-family: courier;
+}

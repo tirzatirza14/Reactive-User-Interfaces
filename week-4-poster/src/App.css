@@ -1,0 +1,15 @@
+.App {
+  padding: 5%;
+  padding-left: 20%;
+  padding-right: 20%;
+  display: flex;
+}
+
+.Forms {
+  width: 50%;
+  margin-right: 2%;
+}
+
+.Output {
+  width: 50%;
+}

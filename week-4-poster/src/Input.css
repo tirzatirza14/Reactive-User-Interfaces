@@ -1,0 +1,20 @@
+.Input {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 6%;
+}
+
+.Input label {
+  font-family: Helvetica, sans-serif;
+  font-size: 0.9em;
+  margin-bottom: 3%;
+  color: #aaaaaa;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #ececec;
+  font-size: 1.5em;
+  outline: none;
+}
