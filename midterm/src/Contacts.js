@@ -32,7 +32,6 @@ class Contacts extends Component {
           <div className={classes}>
             <div className="Container">
               <div className={nightMode}>
-                <img onClick={this.onClick} src={this.props.image} />
                 <img onClick={this.onClick} src={this.props.image}/>
               </div>
             </div>
