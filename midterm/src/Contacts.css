@@ -66,8 +66,9 @@
 .Icon {
   display: flex;
   flex-direction: row;
-  max-width: 2em;
-  max-height: 2em;
+  max-width: 1.5em;
+  max-height: 1.5em;
+  padding-top: .5em;
   padding-left: 8em;
 }
 

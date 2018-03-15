@@ -33,6 +33,7 @@ class Contacts extends Component {
             <div className="Container">
               <div className={nightMode}>
                 <img onClick={this.onClick} src={this.props.image} />
+                <img onClick={this.onClick} src={this.props.image}/>
               </div>
             </div>
           </div>
@@ -40,10 +41,10 @@ class Contacts extends Component {
             {this.props.firstName} {this.props.lastName}
           </label>
           <div className={classes}>
-            <p id="mobile">
+            <p>
               <span>MOBILE</span> {this.props.mobile}
             </p>
-            <p id="home">
+            <p>
               <span className={this.props.home ? "show" : "none"}>HOME</span>{" "}
               {this.props.home}
             </p>
@@ -51,16 +52,20 @@ class Contacts extends Component {
               <span className={this.props.email ? "show" : "none"}>EMAIL</span>{" "}
               {this.props.email}
             </p>
-            <p id="country">
+            <p>
               <span className={this.props.country ? "show" : "none"}>
                 COUNTRY
               </span>{" "}
               {this.props.country}
             </p>
+            <p>
+              <span className={this.props.notes ? "show" : "none"}>NOTES</span>{" "}
+              {this.props.notes}
+            </p>
 
             <div className="Icon">
-              <img src="http://cdn.onlinewebfonts.com/svg/img_442377.png" />
-              <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/wechat-logo-3ef05b13bd20911f-512x512.png" />
+              <img src="http://cdn.onlinewebfonts.com/svg/img_442377.png" alt ="WhatsApp icon"/>
+              <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/wechat-logo-3ef05b13bd20911f-512x512.png" alt="Wechat Icon"/>
             </div>
             <p className="edit">EDIT CONTACT</p>
           </div>

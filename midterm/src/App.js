@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Contacts from "./Contacts";
-import Footer from "./Footer";
 import Checkbox from "./Checkbox";
-
-import { Route, BrowserRouter as Router, Link } from "react-router-dom";
-
-import { CSSTransitionGroup } from "react-transition-group";
 
 class App extends Component {
   constructor(props) {
@@ -32,7 +27,8 @@ class App extends Component {
           mobile: "+62293948202",
           home: "",
           image:
-            "http://altairltd.co.uk/wp-content/uploads/2015/03/sarah_palmer.jpg"
+            "http://altairltd.co.uk/wp-content/uploads/2015/03/sarah_palmer.jpg",
+          notes: ""
         },
         {
           email: "Sara@nyu.edu",
@@ -40,7 +36,8 @@ class App extends Component {
           firstName: "Kerry",
           lastName: "Hagens",
           mobile: "+6592349028",
-          home: "+6592349"
+          home: "+6592349",
+          notes: ""
         },
         {
           email: "Gabriel@nyu.edu",
@@ -58,7 +55,8 @@ class App extends Component {
           firstName: "John",
           lastName: "McCawiduley",
           mobile: "+6223492384",
-          home: "+629812394"
+          home: "+629812394",
+          notes: "met with John at Rebecca's"
         },
         {
           email: "Ross@nyu.edu",
@@ -67,7 +65,8 @@ class App extends Component {
           lastName: "Aftellio",
           mobile: "+6523485095",
           home: "+65834950",
-          image: "https://i.imgur.com/8qCtXxk.jpg"
+          image: "https://i.imgur.com/8qCtXxk.jpg",
+          notes: "Archive Director, Benji's friend"
         },
         {
           email: "Darmawan@nyu.edu",
@@ -268,7 +267,6 @@ class App extends Component {
 
     if (this.state.search !== "") {
       contactsCopyAsc = contactsCopyAsc.filter(item => {
-        const plus = "+";
         return (
           item.firstName.toLowerCase().match(this.state.search) ||
           item.lastName.toLowerCase().match(this.state.search) ||
@@ -321,6 +319,7 @@ class App extends Component {
           email={item.email}
           country={item.country}
           image={item.image}
+          notes={item.notes}
         />
       );
     });
@@ -339,7 +338,7 @@ class App extends Component {
     let modeLabel = this.state.mode ? "DARK" : "LIGHT";
 
     return (
-      <Router>
+
         <div className="App">
           <div className={modeButton}>
             <header>
@@ -369,7 +368,7 @@ class App extends Component {
             {dispContacts}
           </div>
         </div>
-      </Router>
+
     );
   }
 }
