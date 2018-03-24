@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import Contacts from "./Contacts";
 import Checkbox from "./Checkbox";
+import Form from "./Form";
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.addList = this.addList.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
     this.countrySort = this.countrySort.bind(this);
     this.sortDescending = this.sortDescending.bind(this);
@@ -203,11 +205,28 @@ class App extends Component {
           firstName: "Mïa",
           lastName: "Rasheed",
           mobile: "+1523403492",
-          home: ""
+          home: "",
         }
       ]
     };
   }
+
+  addList(firstName, lastName, email, home,mobile,country,notes) {
+      let contactsCopy = this.state.contacts.slice();
+      contactsCopy.push({
+        email: email,
+        country: country,
+        firstName: firstName,
+        lastName: lastName,
+        mobile: mobile,
+        home: home,
+        notes: notes
+      });
+
+      this.setState({
+        contacts: contactsCopy
+      });
+    }
 
   countrySort(label, e) {
     this.setState({
@@ -267,17 +286,25 @@ class App extends Component {
 
     if (this.state.search !== "") {
       contactsCopyAsc = contactsCopyAsc.filter(item => {
-        return (
-          item.firstName.toLowerCase().match(this.state.search) ||
-          item.lastName.toLowerCase().match(this.state.search) ||
-          item.mobile.match(this.state.search) ||
-          item.country.toLowerCase().match(this.state.search)
-        );
+        let firstNameResult = item.firstName
+          .toLowerCase()
+          .match(this.state.search);
+        let lastNameResult = item.lastName
+          .toLowerCase()
+          .match(this.state.search);
+        let mobResult = item.mobile.match(this.state.search);
+        let countryResult = item.country.toLowerCase().match(this.state.search);
+
+        if (firstNameResult || lastNameResult || mobResult || countryResult) {
+          return (
+            firstNameResult || lastNameResult || mobResult || countryResult
+          );
+        }
       });
     }
 
     const countryList = this.state.contacts.map((item, i) => {
-      return item.country;
+      return item.country.trim();
     });
 
     const uniqueCountryList = countryList.filter((value, index, self) => {
@@ -338,37 +365,36 @@ class App extends Component {
     let modeLabel = this.state.mode ? "DARK" : "LIGHT";
 
     return (
+      <div className="App">
+        <div className={modeButton}>
 
-        <div className="App">
-          <div className={modeButton}>
-            <header>
-              <input
-                className="bodyInput"
-                type="text"
-                placeholder="Search Contacts"
-                onChange={this.handleSearch}
-              />
-            </header>
-
-            <div className="options">
-              <div className="nameSort">
-                <label onClick={this.sortDescending}>Sort by {sortLabel}</label>
-              </div>
-              <div className="country">
-                <label onClick={this.onClick}>
-                  Sort by Country <span> &#x02C5;</span>
-                </label>
-
-                <div className={countries}>{contCountry}</div>
-              </div>
-              <div className="nightMode">
-                <label onClick={this.nightMode}>{modeLabel}</label>
-              </div>
+          <div className="options">
+            <div className="nameSort">
+              <label onClick={this.sortDescending}>Sort by {sortLabel}</label>
             </div>
-            {dispContacts}
-          </div>
-        </div>
+            <div className="country">
+              <label onClick={this.onClick}>
+                Sort by Country <span> &#x02C5;</span>
+              </label>
 
+              <div className={countries}>{contCountry}</div>
+            </div>
+            <div className="nightMode">
+              <label onClick={this.nightMode}>{modeLabel}</label>
+            </div>
+          </div>
+          <Form onSubmit={this.addList} />
+          {dispContacts}
+        </div>
+        <div className="searchBar">
+          <input
+            className="bodyInput"
+            type="text"
+            placeholder="Search Contacts"
+            onChange={this.handleSearch}
+          />
+        </div>
+      </div>
     );
   }
 }

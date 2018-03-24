@@ -1,0 +1,57 @@
+.Fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.Fields input {
+  outline: none;
+  width: 10em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-size: 1em;
+  font-family: Futura;
+  border: none;
+  border-bottom: 1px solid #cacaca;
+}
+
+.Names {
+  display: flex;
+  flex-direction: row;
+}
+
+.Names input {
+  width: 6em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Fields button {
+  border: none;
+  background-color: black;
+  color: white;
+  margin-top: 2em;
+  padding: 1.5em;
+  font-size: 1em;
+}
+
+.hideForm {
+  display: none;
+}
+
+.showForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
