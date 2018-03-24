@@ -10,6 +10,15 @@
   margin-left: 0;
 }
 
+.addForm {
+  position: fixed;
+  bottom: 10vh;
+  right: 8vw;
+  z-index: 20;
+  /* height: 5%;
+  width: 100%; */
+}
+
 .bodyInput {
   position: fixed !important;
   font-family: Futura;
@@ -46,7 +55,7 @@
 .options {
   display: flex;
   flex-direction: row;
-  margin: 2em 0.75em 2em 0.75em;
+  margin: 2em 0.75em 0em 0.75em;
   font-size: 0.75em;
   text-transform: uppercase;
   text-align: center;

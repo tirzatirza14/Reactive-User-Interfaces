@@ -13,220 +13,227 @@ class App extends Component {
     this.sortDescending = this.sortDescending.bind(this);
     this.onClick = this.onClick.bind(this);
     this.nightMode = this.nightMode.bind(this);
-    this.state = {
-      mode: false,
-      showInfo: false,
-      showCountryInfo: false,
-      search: "",
-      checkSort: false,
-      country: "",
-      contacts: [
-        {
-          email: "Sara@nyu.edu",
-          country: "Indonesia",
-          firstName: "Sara",
-          lastName: "Palmer",
-          mobile: "+62293948202",
-          home: "",
-          image:
-            "http://altairltd.co.uk/wp-content/uploads/2015/03/sarah_palmer.jpg",
-          notes: ""
-        },
-        {
-          email: "Sara@nyu.edu",
-          country: "Singapore",
-          firstName: "Kerry",
-          lastName: "Hagens",
-          mobile: "+6592349028",
-          home: "+6592349",
-          notes: ""
-        },
-        {
-          email: "Gabriel@nyu.edu",
-          country: "China",
-          firstName: "Carlos",
-          lastName: "Gabriel",
-          mobile: "+8634829340",
-          home: "",
-          image:
-            "http://3.bp.blogspot.com/-I13D9RK_7ZE/TbDkkgoDtPI/AAAAAAAAA4E/bllvYaMq_cc/s1600/Crl.jpg"
-        },
-        {
-          email: "McCawiduley@nyu.edu",
-          country: "Indonesia",
-          firstName: "John",
-          lastName: "McCawiduley",
-          mobile: "+6223492384",
-          home: "+629812394",
-          notes: "met with John at Rebecca's"
-        },
-        {
-          email: "Ross@nyu.edu",
-          country: "Singapore",
-          firstName: "Ross",
-          lastName: "Aftellio",
-          mobile: "+6523485095",
-          home: "+65834950",
-          image: "https://i.imgur.com/8qCtXxk.jpg",
-          notes: "Archive Director, Benji's friend"
-        },
-        {
-          email: "Darmawan@nyu.edu",
-          country: "United States",
-          firstName: "Edith",
-          lastName: "Darmawan",
-          mobile: "+123948573",
-          home: "+1212848394"
-        },
-        {
-          email: "Heather@nyu.edu",
-          country: "Singapore",
-          firstName: "Heather",
-          lastName: "Ali",
-          mobile: "+658505830",
-          home: ""
-        },
-        {
-          email: "Zija@nyu.edu",
-          country: "South Africa",
-          firstName: "Selma",
-          lastName: "Zija",
-          mobile: "+658205830",
-          home: "",
-          image:
-            "https://0.academia-photos.com/26783112/7476671/8400188/s200_selma._iga.jpg_oh_8a3e5f9bf899d9399fb697c93bce4be9_oe_5581f6cf___gda___1435462820_03c9c901571855c3a451ae4cdb1f1321"
-        },
-        {
-          country: "Indonesia",
-          firstName: "Diyan",
-          lastName: "Dian",
-          mobile: "+6223957402",
-          home: ""
-        },
-        {
-          email: "Tehreem@nyu.edu",
-          country: "Singapore",
-          firstName: "Tehreem",
-          lastName: "Niar",
-          mobile: "+652349506",
-          home: ""
-        },
-        {
-          email: "NiarTa@nyu.edu",
-          country: "Singapore",
-          firstName: "Tatiana",
-          lastName: "Nihar",
-          mobile: "+652349506",
-          home: ""
-        },
-        {
-          email: "Selma@nyu.edu",
-          country: "China",
-          firstName: "Selma",
-          lastName: "Zija",
-          mobile: "+862374942",
-          home: ""
-        },
-        {
-          email: "Olesen@nyu.edu",
-          country: "China",
-          firstName: "Emille",
-          lastName: "Olesen",
-          mobile: "+8658203492",
-          home: ""
-        },
-        {
-          email: "Olsen@nyu.edu",
-          country: "Sweden",
-          firstName: "Emma",
-          lastName: "Olsen",
-          mobile: "+4658203492",
-          home: ""
-        },
-        {
-          email: "OlsenAm@nyu.edu",
-          country: "Sweden",
-          firstName: "Amanda",
-          lastName: "Olsen",
-          mobile: "+4658203492",
-          home: ""
-        },
-        {
-          email: "Rasheed@nyu.edu",
-          country: "Indonesia",
-          firstName: "Alïa",
-          lastName: "Rasheed",
-          mobile: "+6253203492",
-          home: ""
-        },
-        {
-          email: "RasheedM@nyu.edu",
-          country: "Indonesia",
-          firstName: "Maïa",
-          lastName: "Rasheed",
-          mobile: "+6253403492",
-          home: ""
-        },
-        {
-          email: "Ameen@nyu.edu",
-          country: "Singapore",
-          firstName: "Ahmad",
-          lastName: "Ameen",
-          mobile: "+6353403492",
-          home: ""
-        },
-        {
-          email: "Guillem@nyu.edu",
-          country: "Singapore",
-          firstName: "Sylvie",
-          lastName: "Guillem",
-          mobile: "+63523903492",
-          home: ""
-        },
-        {
-          email: "Leonardo@nyu.edu",
-          country: "Indonesia",
-          firstName: "Evan",
-          lastName: "Leonardo",
-          mobile: "+62523903492",
-          home: ""
-        },
-        {
-          email: "RasheedK@nyu.edu",
-          country: "Indonesia",
-          firstName: "Kaïa",
-          lastName: "Rasheed",
-          mobile: "+62523403492",
-          home: ""
-        },
-        {
-          email: "RasheedMia@nyu.edu",
-          country: "United States",
-          firstName: "Mïa",
-          lastName: "Rasheed",
-          mobile: "+1523403492",
-          home: "",
-        }
-      ]
-    };
+
+    let initialState = localStorage.getItem("contactsData");
+    if (initialState) {
+      this.state = JSON.parse(initialState);
+    } else {
+      this.state = {
+        mode: false,
+        showInfo: false,
+        showCountryInfo: false,
+        search: "",
+        checkSort: false,
+        country: "",
+        contacts: [
+          {
+            email: "Sara@nyu.edu",
+            country: "Indonesia",
+            firstName: "Sara",
+            lastName: "Palmer",
+            mobile: "+62293948202",
+            home: "",
+            image:
+              "http://altairltd.co.uk/wp-content/uploads/2015/03/sarah_palmer.jpg",
+            notes: ""
+          },
+          {
+            email: "Sara@nyu.edu",
+            country: "Singapore",
+            firstName: "Kerry",
+            lastName: "Hagens",
+            mobile: "+6592349028",
+            home: "+6592349",
+            notes: ""
+          },
+          {
+            email: "Gabriel@nyu.edu",
+            country: "China",
+            firstName: "Carlos",
+            lastName: "Gabriel",
+            mobile: "+8634829340",
+            home: "",
+            image:
+              "http://3.bp.blogspot.com/-I13D9RK_7ZE/TbDkkgoDtPI/AAAAAAAAA4E/bllvYaMq_cc/s1600/Crl.jpg"
+          },
+          {
+            email: "McCawiduley@nyu.edu",
+            country: "Indonesia",
+            firstName: "John",
+            lastName: "McCawiduley",
+            mobile: "+6223492384",
+            home: "+629812394",
+            notes: "met with John at Rebecca's"
+          },
+          {
+            email: "Ross@nyu.edu",
+            country: "Singapore",
+            firstName: "Ross",
+            lastName: "Aftellio",
+            mobile: "+6523485095",
+            home: "+65834950",
+            image: "https://i.imgur.com/8qCtXxk.jpg",
+            notes: "Archive Director, Benji's friend"
+          },
+          {
+            email: "Darmawan@nyu.edu",
+            country: "United States",
+            firstName: "Edith",
+            lastName: "Darmawan",
+            mobile: "+123948573",
+            home: "+1212848394"
+          },
+          {
+            email: "Heather@nyu.edu",
+            country: "Singapore",
+            firstName: "Heather",
+            lastName: "Ali",
+            mobile: "+658505830",
+            home: ""
+          },
+          {
+            email: "Zija@nyu.edu",
+            country: "South Africa",
+            firstName: "Selma",
+            lastName: "Zija",
+            mobile: "+658205830",
+            home: "",
+            image:
+              "https://0.academia-photos.com/26783112/7476671/8400188/s200_selma._iga.jpg_oh_8a3e5f9bf899d9399fb697c93bce4be9_oe_5581f6cf___gda___1435462820_03c9c901571855c3a451ae4cdb1f1321"
+          },
+          {
+            country: "Indonesia",
+            firstName: "Diyan",
+            lastName: "Dian",
+            mobile: "+6223957402",
+            home: ""
+          },
+          {
+            email: "Tehreem@nyu.edu",
+            country: "Singapore",
+            firstName: "Tehreem",
+            lastName: "Niar",
+            mobile: "+652349506",
+            home: ""
+          },
+          {
+            email: "NiarTa@nyu.edu",
+            country: "Singapore",
+            firstName: "Tatiana",
+            lastName: "Nihar",
+            mobile: "+652349506",
+            home: ""
+          },
+          {
+            email: "Selma@nyu.edu",
+            country: "China",
+            firstName: "Selma",
+            lastName: "Zija",
+            mobile: "+862374942",
+            home: ""
+          },
+          {
+            email: "Olesen@nyu.edu",
+            country: "China",
+            firstName: "Emille",
+            lastName: "Olesen",
+            mobile: "+8658203492",
+            home: ""
+          },
+          {
+            email: "Olsen@nyu.edu",
+            country: "Sweden",
+            firstName: "Emma",
+            lastName: "Olsen",
+            mobile: "+4658203492",
+            home: ""
+          },
+          {
+            email: "OlsenAm@nyu.edu",
+            country: "Sweden",
+            firstName: "Amanda",
+            lastName: "Olsen",
+            mobile: "+4658203492",
+            home: ""
+          },
+          {
+            email: "Rasheed@nyu.edu",
+            country: "Indonesia",
+            firstName: "Alïa",
+            lastName: "Rasheed",
+            mobile: "+6253203492",
+            home: ""
+          },
+          {
+            email: "RasheedM@nyu.edu",
+            country: "Indonesia",
+            firstName: "Maïa",
+            lastName: "Rasheed",
+            mobile: "+6253403492",
+            home: ""
+          },
+          {
+            email: "Ameen@nyu.edu",
+            country: "Singapore",
+            firstName: "Ahmad",
+            lastName: "Ameen",
+            mobile: "+6353403492",
+            home: ""
+          },
+          {
+            email: "Guillem@nyu.edu",
+            country: "Singapore",
+            firstName: "Sylvie",
+            lastName: "Guillem",
+            mobile: "+63523903492",
+            home: ""
+          },
+          {
+            email: "Leonardo@nyu.edu",
+            country: "Indonesia",
+            firstName: "Evan",
+            lastName: "Leonardo",
+            mobile: "+62523903492",
+            home: ""
+          },
+          {
+            email: "RasheedK@nyu.edu",
+            country: "Indonesia",
+            firstName: "Kaïa",
+            lastName: "Rasheed",
+            mobile: "+62523403492",
+            home: ""
+          },
+          {
+            email: "RasheedMia@nyu.edu",
+            country: "United States",
+            firstName: "Mïa",
+            lastName: "Rasheed",
+            mobile: "+1523403492",
+            home: ""
+          }
+        ]
+      };
+    }
   }
 
-  addList(firstName, lastName, email, home,mobile,country,notes) {
-      let contactsCopy = this.state.contacts.slice();
-      contactsCopy.push({
-        email: email,
-        country: country,
-        firstName: firstName,
-        lastName: lastName,
-        mobile: mobile,
-        home: home,
-        notes: notes
-      });
+  addList(firstName, lastName, email, home, mobile, country, notes) {
+    let contactsCopy = this.state.contacts.slice();
+    contactsCopy.push({
+      email: email,
+      country: country,
+      firstName: firstName,
+      lastName: lastName,
+      mobile: mobile,
+      home: home,
+      notes: notes,
+      id: this.state.contacts.length
+    });
 
-      this.setState({
-        contacts: contactsCopy
-      });
-    }
+    this.setState({
+      contacts: contactsCopy
+    });
+  }
 
   countrySort(label, e) {
     this.setState({
@@ -257,6 +264,10 @@ class App extends Component {
     this.setState({
       checkSort: !this.state.checkSort
     });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("contactsData", JSON.stringify(this.state));
   }
 
   render() {
@@ -367,7 +378,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className={modeButton}>
-
+          <div className="addForm">
+            <Form onSubmit={this.addList} />
+          </div>
           <div className="options">
             <div className="nameSort">
               <label onClick={this.sortDescending}>Sort by {sortLabel}</label>
@@ -383,7 +396,7 @@ class App extends Component {
               <label onClick={this.nightMode}>{modeLabel}</label>
             </div>
           </div>
-          <Form onSubmit={this.addList} />
+
           {dispContacts}
         </div>
         <div className="searchBar">

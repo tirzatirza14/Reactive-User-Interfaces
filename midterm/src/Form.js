@@ -93,6 +93,7 @@ class Form extends Component {
       notes: ""
     });
   }
+
   render() {
     let classes = "hideForm";
     if (this.state.showInfo) {
@@ -100,9 +101,9 @@ class Form extends Component {
     }
     return (
       <div className="Form">
-        <div className="Fields" >
-          <h3 onClick={this.onClick}>New Contact</h3>
+        <div className="Fields">
           <div className={classes}>
+            <p>NEW CONTACT</p>
             <div className="Names">
               <input
                 type="text"
@@ -148,10 +149,14 @@ class Form extends Component {
                 value={this.state.notes}
                 onChange={this.notesChange}
               />
-
-            <button onClick={this.addPerson}>Add to List</button>
             </div>
           </div>
+        </div>
+        <div className="formButton">
+          <button className={classes} onClick={this.addPerson}>
+            SAVE CONTACT
+          </button>
+          <h1 onClick={this.onClick}>+</h1>
         </div>
       </div>
     );

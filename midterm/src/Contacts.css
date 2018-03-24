@@ -1,5 +1,5 @@
 .Contacts {
-  margin: 1em 3em 1em 2em;
+  margin: 2em 3em 2em 2em;
   border-bottom: 1px solid #eaeaea;
   text-align: center;
   padding-bottom: 2em;
@@ -42,7 +42,6 @@
   max-height: 20vh;
   align-content: center;
   clip-path: circle(4em at center);
-
   overflow: hidden;
 }
 
@@ -55,15 +54,14 @@
   z-index: -1;
 }
 
-.edit {
+.Contacts .edit {
   font-weight: normal;
   font-size: 0.5em;
   text-transform: uppercase;
-  text-align: right;
-  padding-bottom: 0;
+  text-align: center;
+  margin-top:3em;
+
 }
-
-
 
 .Icon {
   display: flex;

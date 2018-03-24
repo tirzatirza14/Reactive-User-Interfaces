@@ -32,7 +32,7 @@ class Contacts extends Component {
           <div className={classes}>
             <div className="Container">
               <div className={nightMode}>
-                <img onClick={this.onClick} src={this.props.image}/>
+                <img onClick={this.onClick} src={this.props.image} />
               </div>
             </div>
           </div>
@@ -63,8 +63,14 @@ class Contacts extends Component {
             </p>
 
             <div className="Icon">
-              <img src="http://cdn.onlinewebfonts.com/svg/img_442377.png" alt ="WhatsApp icon"/>
-              <img src="https://cdn.iconscout.com/public/images/icon/free/png-512/wechat-logo-3ef05b13bd20911f-512x512.png" alt="Wechat Icon"/>
+              <img
+                src="http://cdn.onlinewebfonts.com/svg/img_442377.png"
+                alt="WhatsApp icon"
+              />
+              <img
+                src="https://cdn.iconscout.com/public/images/icon/free/png-512/wechat-logo-3ef05b13bd20911f-512x512.png"
+                alt="Wechat Icon"
+              />
             </div>
             <p className="edit">EDIT CONTACT</p>
           </div>
