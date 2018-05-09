@@ -1,0 +1,17 @@
+import React, { Component } from 'react';
+import './shortCard.css';
+
+class ShortCard extends Component {
+  render() {
+    return (
+      <div className="ShortCard">
+        <div className="container">
+        <div className="container-tag">tag</div>
+        <div className="container-image"/>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default ShortCard;

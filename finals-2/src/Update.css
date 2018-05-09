@@ -1,0 +1,18 @@
+.Update {
+  font-family: Georgia;
+  max-height: 30vh;
+  max-width: 100vw;
+  margin: 1em 1em 1em 1em;
+}
+
+
+.Update-title {
+    text-align: justify;
+    margin: 0 0 0 1em;
+    font-size: 1.5em;
+}
+
+.Update-info{
+  font-size: 2em;
+  font-family: sans-serif;
+}

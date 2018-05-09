@@ -1,0 +1,39 @@
+.App {
+  display: grid;
+  grid-template-columns: 30vw auto 30vw;
+  grid-template-rows: 5em auto;
+}
+
+.App a {
+  text-decoration: none;
+  margin: 0 1em 2em 1em;
+}
+
+.App a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.Links {
+  grid-column: 2/3;
+  place-self: center;
+}
+
+.SearchBar {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  margin: 0 -4em 0 0;
+  justify-self: end;
+  align-self: center;
+  height: 3em;
+  width: 60%;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid black;
+  text-align: right;
+
+}
+
+input {
+  font-size: 1em;
+}

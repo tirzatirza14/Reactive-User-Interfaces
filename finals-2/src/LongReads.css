@@ -1,0 +1,76 @@
+.LongReads {
+  display: grid;
+  grid-template-columns: 15em auto 15em;
+  grid-template-rows: 60vh auto;
+}
+
+.LongReads .image-container {
+  grid-column: 1/4;
+  grid-row: 1/3;
+  height: 80vh;
+  width: 100vw;
+  /* background-color: #5ac2ed; */
+  margin: 1em 0 1em 0;
+  /* display: flex;
+  justify-content: center; */
+  overflow: hidden;
+}
+
+.image {
+  height: 100%;
+  width: auto;
+  position: relative;
+  z-index: -1;
+  object-fit: fill;
+
+}
+
+.title{
+  position: absolute;
+  text-align: left;
+  width: 50vw;
+  bottom: 4em;
+  left:4em;
+  z-index: 10;
+  font-size: 2em;
+  font-family: serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.LongReads .body {
+  margin-top: 3em;
+  grid-column: 2/3;
+  /* grid-row: 2/3; */
+  line-height: 1.7em;
+  text-align: justify;
+  width: 80%;
+  justify-self: center;
+}
+
+.LongReads .quote {
+  grid-column: 2/3;
+  font-style: italic;
+  font-family: serif;
+  font-size: 3em;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+.quote:before {
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  margin: 0 auto; /* This will center the border. */
+  width: 5%; /* Change this to whatever width you want. */
+  padding-top: 20px; /* This creates some space between the element and the border. */
+  border-top: 4px solid #ececec; /* This creates the border. Replace black with whatever color you want. */
+}
+
+.quote:after {
+  content: ""; /* This is necessary for the pseudo element to work. */
+  display: block; /* This will put the pseudo element on its own line. */
+  margin: 0 auto; /* This will center the border. */
+  width: 5%; /* Change this to whatever width you want. */
+  padding-top: 20px; /* This creates some space between the element and the border. */
+  border-bottom: 4px solid #ececec; /* This creates the border. Replace black with whatever color you want. */
+}

@@ -1,0 +1,37 @@
+.SearchPage {
+  padding: 5em;
+  padding-top: 0;
+}
+
+.SearchPage .results {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  padding: 2em;
+  flex-wrap: wrap;
+}
+
+.SearchPage .texts {
+  margin: 0;
+  padding-left: 2em;
+  width: 100vw;
+    text-align: left;
+      margin-bottom: 1em;
+}
+
+.SearchPage h1 {
+
+  font-family: serif;
+  font-style: italic;
+  font-size: 4em;
+  margin: 0;
+  text-decoration: underline;
+
+}
+
+.texts p {
+  font-size: 2em;
+  margin: 0;
+
+  font-weight: 100;
+}
